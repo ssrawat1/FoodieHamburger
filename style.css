@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f0eb;
+  font-family: "popins", sans-serif;
+  color: #492118;
+}
+.main-content {
+  overflow-x: hidden; /* overflow in case of mobile divices does not work that's why we use div here ,in mobile case overflow scroll works  */
+  height: 100vh;
+  scroll-behavior: smooth; /* by default scroll bar html pe hota hai but div pe height dene ki waja se scroll bar ispe aa gaya */
+}
+nav ul li {
+  list-style: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+nav ul li a {
+  text-decoration-line: none;
+  color: inherit;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 20px;
+}
+.header-container {
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li + li {
+  /* because in some browser gap property does not work so that's why i  use this style */
+  margin-left: 60px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.img-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.hero-section {
+  margin-top: 70px;
+  text-align: center;
+}
+.heroText {
+  margin: 10px 0;
+}
+main {
+  padding: 0 32px;
+}
+
+.section .img-container {
+  max-width: 900px;
+}
+
+.section {
+  margin-top: 120px;
+}
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 40px;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.goToTop {
+  text-align: right;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.goToTop a {
+  text-decoration-line: underline;
+}
+
+a {
+  color: inherit;
+}
+
+nav ul li a:hover {
+  text-decoration: underline solid darkblue;
+}
+
+#footer-text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #858585;
+  margin-top: 40px;
+  padding-bottom: 25px;
+}
+
+.close-icon {
+  position: absolute;
+  display: none;
+  font-size: 28px;
+  right: 17px;
+  top: 5px;
+}
+.close-icon:hover {
+  cursor: pointer;
+  color: darkblue;
+}
+
+.hamburger-menu-container {
+  overflow: hidden; /* Hide the outiside thinks */
+  position: relative;
+  top: 20px;
+  width: 90px;
+  height: 100px;
+  display: none;
+}
+
+.hamburger-menu {
+  background-color: white;
+  width: 180px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -154px;
+  right: -154px;
+}
+.humburger-icon {
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 14px;
+  left: 56px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  nav ul li {
+    font-size: 18px;
+  }
+  nav ul li + li {
+    margin-left: 40px;
+  }
+  h1 {
+    font-size: 32;
+  }
+  header {
+    padding: 16px 24px;
+  }
+  .section .img-container {
+    max-width: 800px;
+  }
+}
+@media (max-width: 1000px) {
+  nav ul li {
+    font-size: 16px;
+  }
+  nav ul li + li {
+    margin-left: 32px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .goToTop {
+    font-size: 20px;
+  }
+  #footer-text {
+    font-size: 16px;
+  }
+  .hero-section {
+    margin-top: 40px;
+  }
+  .section {
+    margin-top: 60px;
+  }
+  .section .img-container {
+    max-width: 700px;
+  }
+}
+@media (max-width: 840px) {
+  /* hambureger manu start from here */
+  header {
+    min-height: 100px;
+    background-color: #f6f0ebb7;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+  }
+  nav ul {
+    position: absolute;
+    background-color: #ffffffe6;
+    flex-direction: column;
+    right: -220px; /* we do not set it display none, we just hide it so what we can animate it and show a slide animation*/
+    padding: 24px;
+    top: 36px;
+    border-radius: 2px;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  nav ul li + li {
+    margin: 0;
+    margin-top: 20px;
+  }
+  .close-icon,
+  .hamburger-menu-container {
+    display: block;
+  }
+  .menu-open nav ul {
+    right: 24px;
+  }
+  .menu-open .hamburger-menu-container {
+    display: none;
+  }
+  .section .img-container {
+    max-width: 600px;
+  }
+  .header-container {
+    height: 100px;
+  }
+}
